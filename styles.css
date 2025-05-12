@@ -1,0 +1,121 @@
+.fake-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  padding: 20px 60px;
+  font-family: "mynor-variable";
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 80px;
+  font-size: 4rem;
+  flex-wrap: wrap;
+  padding-right: 110px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
+
+/* Push the main content down so it’s not hidden under the header */
+.container {
+  margin-top: 100px; /* adjust as needed */
+}
+
+.rect{
+  font-size: 30px;
+  color: #ffffff;
+  background-color: black;
+  padding: 30px;
+  display: inline;
+}
+
+body {
+  background-color: white;
+  color: black;
+  font-size: 120px;
+  font-family: "mynor-variable";
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* main container splits left from right  */
+.container {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.text-section {
+  flex: 4;
+  max-width: 40%;
+  padding: 90px;
+  padding-left: 400px;
+  /* background: rgba(0, 0, 0, 0.8); */
+  align-items: center;
+}
+
+.text-section p {
+  font-size: 40px;
+  line-height: 1.6;
+  color: black;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 5.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+
+/* right section */
+#game-container {
+  flex: 1;
+  width: 100%;
+  max-width: 50%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: black; /* match p5.js */
+}
+
+@keyframes moveRight {
+  0%, 100% { left: -50px; }
+  50% { left: 100vw; }
+}
+
+@keyframes moveLeft {
+  0%, 100% { right: -50px; }
+  50% { right: 100vw; }
+}
+
+@media (max-width: 900px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .text-section, #game-container {
+      max-width: 100%;
+  }
+}
